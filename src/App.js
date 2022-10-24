@@ -1,6 +1,6 @@
-import { SignIn } from "./components/SignIn";
 import { useAuthState } from "react-firebase-hooks/auth";
 
+import { SignIn } from "./components/SignIn";
 import { auth } from "./firebase";
 import { Sns } from "./components/Sns";
 import "./App.css";
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      {user ? <Sns /> : <SignIn />}
+      {user ? <Sns /> : <SignIn user={user} />}
     </div>
   );
 }

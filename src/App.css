@@ -1,7 +1,4 @@
 body {
-  background: linear-gradient(130deg, #5EFCE8 30%, #736EFE);
-  background-repeat: no-repeat;
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -19,10 +16,6 @@ body {
   justify-content: space-around;
 }
 
-.signin {
-  text-align: center;
-  margin-top: 300px;
-}
 
 img {
   border-radius: 50%;
@@ -49,6 +42,23 @@ p {
   border-radius: 3000px;
   box-shadow: 0 0 10px rgb(164, 164, 164);
   align-items: center;
+}
+
+.balloon {
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .send {
