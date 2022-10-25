@@ -4,8 +4,9 @@ import { SignOut } from "./SignOut";
 import { auth, db } from "../firebase";
 import { SendMessage } from "./SendMessage";
 
-export const Sns = () => {
+export const Chat = () => {
   const [messages, setMessages] = useState([]);
+
   useEffect(() => {
     db.collection("messages")
       .orderBy("createdAt")
@@ -14,8 +15,9 @@ export const Sns = () => {
         setMessages(snapshot.docs.map((doc) => doc.data()));
       });
   }, []);
+  
   return (
-    <div>
+    <>
       <SignOut />
       <div className="msgs">
         {messages.map(({id, text, photoURL, uid}) => (
@@ -30,6 +32,6 @@ export const Sns = () => {
         ))}
       </div>
       <SendMessage />
-    </div>
+    </>
   );
 };

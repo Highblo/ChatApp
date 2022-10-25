@@ -1,7 +1,7 @@
 
 export const Balloon = (props) => {
 
-  const { backgroundColor, top, bottom, left, right, children } = props;
+  const { backgroundColor, top, bottom, left, right, animationDelay, children } = props;
 
   const balloonStyle = {
     position: "absolute",
@@ -10,6 +10,8 @@ export const Balloon = (props) => {
     left,
     right,
     backgroundColor,
+    animationDelay,
+    color: "#fff",
     width: "180px",
     padding: "24px",
     fontSize: "1.5rem",

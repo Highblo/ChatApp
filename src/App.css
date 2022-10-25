@@ -1,21 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(150, 255, 255);
 }
-
-.header {
-  background: linear-gradient(to right, #6affda 0%,#6950ff 100%);
-  color: white;
-  height: 75px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 
 img {
   border-radius: 50%;
@@ -45,16 +32,15 @@ p {
 }
 
 .balloon {
-  animation: animate 3s linear infinite;
+  animation: animate 4.5s linear infinite;
 }
 
 @keyframes animate {
   0% {
-    opacity: 0;
+    transform: translateY(0px);
   }
   50% {
-    opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
   100% {
     transform: translateY(0px);
@@ -73,6 +59,7 @@ p {
 
 .received {
   background-color: #fafafa;
+  color: #000;
   border-top-left-radius: 500px;
   float: left;
 }

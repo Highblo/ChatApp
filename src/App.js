@@ -2,7 +2,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { SignIn } from "./components/SignIn";
 import { auth } from "./firebase";
-import { Sns } from "./components/Sns";
+import { Chat } from "./components/Chat";
 import "./App.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      {user ? <Sns /> : <SignIn user={user} />}
+      {user ? <Chat /> : <SignIn />}
     </div>
   );
 }
