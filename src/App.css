@@ -64,20 +64,6 @@ p {
   float: left;
 }
 
-.sendMsg {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
-  border-top: 1px solid lightgray;
-  margin-left: -5px;
-  padding: 10px;
-  padding-bottom: 20px;
-  background-color: #fafafa;
-}
 
 .msgs {
   margin: 110px 0;

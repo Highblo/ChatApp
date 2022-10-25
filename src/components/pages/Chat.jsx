@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { SignOut } from "./SignOut";
-import { auth, db } from "../firebase";
-import { SendMessage } from "./SendMessage";
+import { SignOut } from "../organisms/SignOut";
+import { auth, db } from "../../firebase";
+import { SendMessage } from "../organisms/SendMessage";
 
 export const Chat = () => {
   const [messages, setMessages] = useState([]);

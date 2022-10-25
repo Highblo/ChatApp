@@ -1,8 +1,8 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import { SignIn } from "./components/SignIn";
+import { SignIn } from "./components/pages/SignIn";
 import { auth } from "./firebase";
-import { Chat } from "./components/Chat";
+import { Chat } from "./components/pages/Chat";
 import "./App.css";
 
 function App() {

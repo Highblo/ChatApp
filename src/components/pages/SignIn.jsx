@@ -1,8 +1,8 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Button, Container, Typography, Box } from "@mui/material";
 
-import { auth } from "../firebase";
-import { Balloon } from "./Balloon";
+import { auth } from "../../firebase";
+import { Balloon } from "../atoms/Balloon";
 
 export const SignIn = () => {
 
