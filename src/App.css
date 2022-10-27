@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(150, 255, 255);
+  font-family: "Roboto";
 }
 
 img {
@@ -31,16 +32,12 @@ p {
   align-items: center;
 }
 
-.balloon {
-  animation: animate 4.5s linear infinite;
-}
-
 @keyframes animate {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(18px);
+    transform: translateY(15px);
   }
   100% {
     transform: translateY(0px);
