@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { collection, orderBy, query, onSnapshot } from "firebase/firestore";
+import { Box } from "@mui/material";
 
 import { SignOut } from "../organisms/SignOut";
 import { auth, db } from "../../firebase";
@@ -8,29 +10,28 @@ export const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    db.collection("messages")
-      .orderBy("createdAt")
-      .limit(50)
-      .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()));
-      });
+    const deta = collection(db, "messages");
+    const q = query(deta, orderBy("createdAt"));
+    onSnapshot(q, (snapshot) => {
+      setMessages(snapshot.docs.map((doc) => doc.data()));
+    });
   }, []);
-  
+
   return (
     <>
       <SignOut />
-      <div className="msgs">
+      <Box sx={{margin: "110px 0", display: "flex", flexDirection: "column"}}>
         {messages.map(({id, text, photoURL, uid}) => (
-          <div>
+          <Box>
             <div 
               key={id} 
               className={`msg ${uid === auth.currentUser.uid ? "send" : "received"}`}>
               <img src={photoURL} alt="" />
               <p>{text}</p>
             </div>
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
       <SendMessage />
     </>
   );

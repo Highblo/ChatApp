@@ -1,7 +1,7 @@
 import { useState } from "react";
-import firebase from "firebase/compat/app";
-import { Box, Input } from "@mui/material";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import SendIcon from "@mui/icons-material/Send";
+import { Box, Input } from "@mui/material";
 
 import { db, auth } from "../../firebase"; 
 
@@ -14,16 +14,15 @@ export const SendMessage = () => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
     if(message === "") return;
-    db.collection("messages")
-      .add({
-        text: message,
-        photoURL,
-        uid,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    addDoc(collection(db, "messages"), {
+      text: message,
+      photoURL,
+      uid,
+      createdAt: serverTimestamp()
+  });
     setMessage("");
   };
-
+  
   const inputStyle = {
     width: "78%",
     fontSize: "15px",
