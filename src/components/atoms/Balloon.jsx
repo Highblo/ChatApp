@@ -4,11 +4,10 @@ export const Balloon = (props) => {
 
   const { backgroundColor, txs, bxs, tsm, bsm, mxs, msm, left, right, animationDelay, children } = props;
 
-
   return (
     <Box sx={{
       position: "absolute",
-      top: {xs: txs, sm: tsm},
+      top: { xs: txs, sm: tsm },
       bottom: { xs: bxs, sm: bsm },
       left,
       right,

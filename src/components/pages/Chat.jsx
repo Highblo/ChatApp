@@ -20,11 +20,11 @@ export const Chat = () => {
   return (
     <>
       <SignOut />
-      <Box sx={{margin: "110px 0", display: "flex", flexDirection: "column"}}>
-        {messages.map(({id, text, photoURL, uid}) => (
+      <Box sx={{ margin: "110px 0", display: "flex", flexDirection: "column" }}>
+        {messages.map(({ id, text, photoURL, uid }) => (
           <Box>
-            <div 
-              key={id} 
+            <div
+              key={id}
               className={`msg ${uid === auth.currentUser.uid ? "send" : "received"}`}>
               <img src={photoURL} alt="" />
               <p>{text}</p>
