@@ -18,7 +18,7 @@ export const SendMessage = () => {
       text: message,
       photoURL,
       uid,
-      createdAt: serverTimestamp()
+      createdAt: serverTimestamp(),
     });
     setMessage("");
   };
@@ -28,7 +28,7 @@ export const SendMessage = () => {
     fontSize: "15px",
     fontWeight: "550",
     marginLeft: "5px",
-    marginBottom: "-3px"
+    marginBottom: "-3px",
   };
 
   const sendMessageStyle = {

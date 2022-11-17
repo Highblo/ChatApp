@@ -25,7 +25,10 @@ export const Chat = () => {
           <Box>
             <div
               key={id}
-              className={`msg ${uid === auth.currentUser.uid ? "send" : "received"}`}>
+              className={`msg ${
+                uid === auth.currentUser.uid ? "send" : "received"
+              }`}
+            >
               <img src={photoURL} alt="" />
               <p>{text}</p>
             </div>
